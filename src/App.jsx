@@ -6,6 +6,7 @@ import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 
 import initContactList from "./data/contactlist.json";
+import { FaAddressBook } from "react-icons/fa";
 
 const App = () => {
   const initContacts = () => {
@@ -15,7 +16,7 @@ const App = () => {
   };
 
   const [contacts, setContacts] = useState(initContacts);
-  const [filter, setFilter] = useState("");
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     localStorage.setItem("contactList", JSON.stringify(contacts));
@@ -34,14 +35,19 @@ const App = () => {
   };
 
   const contactList = contacts.filter((contact) => {
-    return contact.name.toLowerCase().includes(filter.toLowerCase());
+    return contact.name.toLowerCase().includes(searchText.toLowerCase());
   });
 
   return (
     <div className="container">
-      <h1>Phonebook</h1>
+      <h1>
+        <span>
+          <FaAddressBook />
+        </span>
+        Phonebook
+      </h1>
       <ContactForm onAdd={addContact} />
-      <SearchBox filter={filter} onFilter={setFilter} />
+      <SearchBox searchText={searchText} onSearch={setSearchText} />
       <ContactList list={contactList} onDelete={deleteContact} />
     </div>
   );

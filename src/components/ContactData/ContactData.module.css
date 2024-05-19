@@ -7,3 +7,8 @@
 .icon {
   padding: 8px;
 }
+.id {
+  font-size: 9pt;
+  color: gray;
+  padding-left: 4px;
+}
