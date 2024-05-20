@@ -10,8 +10,19 @@
 }
 
 input[type="text"] {
+  position: relative;
   width: 100%;
 }
 .form-element {
   width: 97%;
+}
+.error {
+  color: red;
+  font-weight: 700;
+
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  cursor: pointer; */
 }

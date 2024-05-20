@@ -18,14 +18,15 @@ input[type="text"] {
 }
 
 /* input.Search */
+.input-container {
+  position: relative;
+  width: 300px;
+}
+
 input {
   width: 100%;
   padding: 10px 10px 10px 30px;
   box-sizing: border-box;
-}
-.input-container {
-  position: relative;
-  width: 300px;
 }
 
 .icon {

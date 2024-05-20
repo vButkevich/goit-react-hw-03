@@ -42,7 +42,7 @@ const App = () => {
     <div className="container">
       <h1>
         <span>
-          <FaAddressBook />
+          <FaAddressBook color="gray" />
         </span>
         Phonebook
       </h1>
