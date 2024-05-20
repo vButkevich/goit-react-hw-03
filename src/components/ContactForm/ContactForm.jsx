@@ -1,5 +1,6 @@
 import css from "./ContactForm.module.css";
 
+import { useId } from "react";
 import { Formik } from "formik";
 import { Form, Field } from "formik";
 import { ErrorMessage } from "formik";
@@ -11,6 +12,9 @@ const ContactForm = ({ onAdd }) => {
     name: "",
     number: "",
   };
+
+  const nameFieldId = useId();
+  const numberFieldId = useId();
 
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -41,12 +45,14 @@ const ContactForm = ({ onAdd }) => {
       <Form className={css.form}>
         <div className={css["form-element"]}>
           <label htmlFor="name">Name</label>
-          <Field type="text" id="name" name="name" />
+          {/* <Field type="text" id="name" name="name" /> */}
+          <Field type="text" id={nameFieldId} name="name" />
           <ErrorMessage name="name" component="div" />
         </div>
         <div className={css["form-element"]}>
           <label htmlFor="number">Number</label>
-          <Field type="text" id="number" name="number" />
+          {/* <Field type="text" id="number" name="number" /> */}
+          <Field type="text" id={numberFieldId} name="number" />
           <ErrorMessage name="number" component="div" />
         </div>
         <button type="submit">Add Contact</button>
